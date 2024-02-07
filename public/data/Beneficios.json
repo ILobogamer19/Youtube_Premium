@@ -1,0 +1,21 @@
+[
+  {
+    "src": "https://www.gstatic.com/youtube/img/promos/growth/premium_lp2_small_feature_Ad-free_dark_tablet_600x444.webp",
+    "text": "Sem anúncios, para que você assista seus vídeos favoritos sem interrupção"
+  },
+  {
+    "src": "https://www.gstatic.com/youtube/img/promos/growth/premium_lp2_small_feature_DownloadMultiple_dark_tablet_600x508.webp",
+    "text": "Faça o download de vídeos para assistir mais tarde quando você estiver off-line ou longe da Internet",
+    "class": "Nao_Degrade_Inicio_Site"
+  },
+  {
+    "src": "https://www.gstatic.com/youtube/img/promos/growth/premium_lp2_small_feature_PictureInPicture_dark_tablet_600x764.webp",
+    "text": "Assista vídeos em segundo plano com a tela bloqueada e enquanto usa outros apps",
+    "class": "Nao_Degrade_Inicio_Site"
+  },
+  {
+    "src": "https://www.gstatic.com/youtube/img/promos/growth/premium_lp2_small_feature_UnlimitedMusic_dark_tablet_600x504.webp",
+    "text": "Ouça todas as músicas que quiser, sem anúncios, no app YouTube Music",
+    "class": "Nao_Degrade_Inicio_Site"
+  }
+]

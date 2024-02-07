@@ -1,0 +1,71 @@
+body {
+  background-color: black;
+}
+.Formulario_Cadastro_Form {
+  position: relative;
+  bottom: 30%;
+  zoom: 1.5;
+  text-align: center;
+}
+.Botao_De_Cadastro {
+  margin: 10px 0 0 0;
+}
+.QR_Code_Pagamento {
+  margin: 10px 0 0 0;
+  width: 100px;
+}
+.Titulo_Formulario_Cadastro {
+  margin: 35px 0 35px 0;
+  text-align: center;
+}
+.Titulo_Cadastro_Informacoes {
+  /*margin: 0 5px 0 30px;*/
+  display: block;
+}
+.Inputs_De_Cadastro {
+  padding: 7px;
+  background-color: rgb(15, 15, 17);
+  border: 1px solid rgb(62, 49, 188);
+  border-radius: 5px;
+  color: white;
+}
+.Pagamentos_Pix {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  position: relative;
+  margin-top: 50px;
+  bottom: 1px;
+}
+.Buttons_Cadastro_E_Pix {
+  width: 150px;
+  height: 40px;
+  text-align: start;
+  filter: invert(100%);
+  border: 1px solid rgb(191, 205, 62);
+  border-radius: 5px;
+  text-align: center;
+}
+.Conjunto_Pagamento_QR_Code {
+  text-align: center;
+  float: right;
+  margin: 0 50px 0 0;
+}
+.Conjunto_Pagamento_Chave_Pix {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.Button_Pix_Copiar {
+  margin-top: 5px;
+  font-size: 16px;
+  width: 100px;
+  height: 40px;
+}
+.Chave_Pix {
+  text-align: center;
+  width: 200px;
+  margin: 10px 20px 20px 20px;
+  font-size: 10px;
+}

@@ -1,0 +1,82 @@
+import axios from "axios";
+import React, { useReducer } from "react";
+
+const api = axios.create({
+  baseURL: "https://api.mercadopago.com",
+});
+
+api.interceptors.request.use(async (config) => {
+  const token = "TEST-d7a20328-d930-4f74-83f9-76e87e32ae66";
+  config.headers.Authorization = `Bearer ${token}`;
+
+  return config;
+});
+
+const formReducer = (state, event) => {
+  return {
+    ...state,
+    [event.name]: event.value,
+  };
+};
+
+export default function FormularioMercadoPago() {
+  const [formData, setFormdata] = useReducer(formReducer, {});
+
+  const handleChange = (event) => {
+    setFormdata({
+      name: event.target.name,
+      value: event.target.value,
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(formData);
+
+    const body = {
+      trasaction_amount: 10,
+      description: "product",
+      payment_method_id: "pix",
+      payer: {
+        email: "teste@gmail.com",
+        fist_name: "nameeee",
+        last_name: "nomeee",
+        identification: {
+          type: "CPF",
+          number: "1234567890",
+        },
+      },
+      notification_url: "https://eozi7mkvhxm4u2f.m.pipedream.net",
+    };
+
+    api
+      .post("v1/payments", body)
+      .then((response) => {})
+      .catch((err) => {
+        alert(err);
+      });
+  };
+
+  return (
+    <div>
+      <h1>Informações para Cadastro</h1>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>E-mail:</label>
+          <input name="email" onChange={handleChange} />
+        </div>
+        <div>
+          <label>Nome:</label>
+          <input name="nome" onChange={handleChange} />
+        </div>
+        <div>
+          <label>CPF: </label>
+          <input name="cpf" onChange={handleChange} />
+        </div>
+        <div>
+          <button type="submit">Pagar</button>
+        </div>
+      </form>
+    </div>
+  );
+}
