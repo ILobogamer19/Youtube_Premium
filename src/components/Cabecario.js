@@ -19,7 +19,7 @@ export default function Cabecario() {
           }}
           alt=""
         />
-        <button className="Button_Assine_Agora">ASSINE AGORA</button>
+        <button className="Button_Assine_Agora">ASSINE AQUIIIIII AGORA</button>
       </div>
       <div className="Cabecario">
         <img
