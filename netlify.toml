@@ -1,5 +1,5 @@
-[build]
-  command = "npm run build"
-  commandOrigin: "config"
-  publish = "/opt/build/repo/public"
-  publishOrigin: "config"
+build:
+  command = npm run build
+  commandOrigin: config
+  publish = /opt/build/repo/public
+  publishOrigin: config
