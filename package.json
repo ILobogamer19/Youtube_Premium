@@ -24,12 +24,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prebuild": "echo 'Running prebuild script'"
-  },
-  "babel": {
-    "plugins": [
-      "@babel/plugin-syntax-top-level-await"
-    ]
+    "prebuild": "nvm install && nvm use"
   },
   "eslintConfig": {
     "extends": [

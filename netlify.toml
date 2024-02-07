@@ -1,4 +1,5 @@
 [build]
   command = "npm run build"
+  commandOrigin: "config"
   publish = "/opt/build/repo/public"
-  node_version = "14"
+  publishOrigin: "config"
