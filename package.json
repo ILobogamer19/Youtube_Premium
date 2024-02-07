@@ -26,6 +26,11 @@
     "eject": "react-scripts eject",
     "prebuild": "echo 'Running prebuild script'"
   },
+  "babel": {
+    "plugins": [
+      "@babel/plugin-syntax-top-level-await"
+    ]
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
