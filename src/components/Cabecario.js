@@ -1,5 +1,4 @@
 import Icon_Youtube from "../img/Icon_Youtube.png";
-import Icon_Options from "../img/Icon_Options.png";
 import { useNavigate } from "react-router-dom";
 
 export default function Cabecario() {
@@ -18,8 +17,8 @@ export default function Cabecario() {
           onClick={() => {
             window.location.href = "https://www.youtube.com/";
           }}
+          alt=""
         />
-        {/*<img src={Icon_Options} className="Icon_Options" />*/}
         <button className="Button_Assine_Agora">ASSINE AGORA</button>
       </div>
       <div className="Cabecario">
@@ -29,8 +28,8 @@ export default function Cabecario() {
           onClick={() => {
             window.location.href = "https://www.youtube.com/";
           }}
+          alt=""
         />
-        {/*<img src={Icon_Options} className="Icon_Options" />*/}
         <button className="Button_Assine_Agora" onClick={Url_Assinatura}>
           ASSINE AGORA
         </button>

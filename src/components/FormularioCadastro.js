@@ -107,7 +107,7 @@ export default function FormularioMercadoPago() {
       <div className="Pagamentos_Pix">
         <div className="Conjunto_Pagamento_QR_Code">
           <p>QR Code</p>
-          <img src={QR_Code_Pagamento} className="QR_Code_Pagamento" />
+          <img src={QR_Code_Pagamento} className="QR_Code_Pagamento" alt="" />
         </div>
         <div className="Conjunto_Pagamento_Chave_Pix">
           <ButtonCopiarChavePix

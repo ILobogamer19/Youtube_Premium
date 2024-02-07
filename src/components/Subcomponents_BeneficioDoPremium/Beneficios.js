@@ -10,7 +10,7 @@ export default function Beneficios() {
           <div className={item.class ? item.class : ""} key={item.src + "3"}>
             <ytm-lp-small-feature-section-view-model key={item.src + item.text}>
               <div className="Container_Icon_Beneficios">
-                <img className="Icon_Beneficios" src={item.src} />
+                <img className="Icon_Beneficios" src={item.src} alt="" />
               </div>
               <div className="Texto_Beneficios">{item.text}</div>
             </ytm-lp-small-feature-section-view-model>
