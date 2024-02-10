@@ -1,7 +1,6 @@
 import "./style.css";
 import Cabecario from "../../components/Cabecario";
 import BeneficiosDoPremium from "../../components/BeneficiosDoPremium";
-import YTMusicApresentacao from "../../components/YTMusicApresentacao";
 
 export default function HomePage() {
   return (
