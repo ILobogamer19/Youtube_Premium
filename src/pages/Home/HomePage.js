@@ -12,7 +12,7 @@ export default function HomePage() {
           <BeneficiosDoPremium />
         </div>
       </div>
-      <YTMusicApresentacao />
+      {/* <YTMusicApresentacao /> */}
     </div>
   );
 }

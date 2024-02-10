@@ -19,11 +19,11 @@ body {
   text-align: center;
 }
 .Titulo_Cadastro_Informacoes {
-  /*margin: 0 5px 0 30px;*/
+  font-size: 14px;
   display: block;
 }
 .Inputs_De_Cadastro {
-  padding: 7px;
+  padding: 5px;
   background-color: rgb(15, 15, 17);
   border: 1px solid rgb(62, 49, 188);
   border-radius: 5px;
@@ -38,8 +38,8 @@ body {
   bottom: 1px;
 }
 .Buttons_Cadastro_E_Pix {
-  width: 150px;
-  height: 40px;
+  width: 120px;
+  height: 35px;
   text-align: start;
   filter: invert(100%);
   border: 1px solid rgb(191, 205, 62);

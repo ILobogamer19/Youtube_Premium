@@ -57,43 +57,43 @@ export default function FormularioMercadoPago() {
           <input
             name="nome"
             onChange={(e) => setNome(e.target.value)}
-            placeholder="José Pereira"
-            className="Inputs_De_Cadastro"
+            placeholder="Seu nome"
+            className="Inputs_De_Cadastro Input_Nome_Cadastro"
             value={Nome}
             required
           />
         </div>
         <br />
         <div>
-          <label className="Titulo_Cadastro_Informacoes">Número:</label>
+          <label className="Titulo_Cadastro_Informacoes">Telefone:</label>
           <input
             name="number"
             onChange={(e) => setNumero(e.target.value)}
-            placeholder="15996344652"
-            className="Inputs_De_Cadastro"
+            placeholder="Seu telefone"
+            className="Inputs_De_Cadastro Telefone_Nome_Cadastro"
             value={Numero}
             required
           />
         </div>
         <br />
         <div>
-          <label className="Titulo_Cadastro_Informacoes">E-mail:</label>
+          <label className="Titulo_Cadastro_Informacoes ">E-mail:</label>
           <input
             name="email"
             onChange={(e) => setEmail(e.target.value)}
             placeholder="seuemailaqui@gmail.com"
-            className="Inputs_De_Cadastro"
+            className="Inputs_De_Cadastro Email_Nome_Cadastro"
             value={Email}
             required
           />
         </div>
         <br />
         <div>
-          <label className="Titulo_Cadastro_Informacoes">Código:</label>
+          <label className="Titulo_Cadastro_Informacoes ">Código:</label>
           <input
             name="text"
             onChange={(e) => setCodigo(e.target.value)}
-            className="Inputs_De_Cadastro"
+            className="Inputs_De_Cadastro Codigo_Nome_Cadastro"
             placeholder="Código de recomendação"
             value={Codigo}
           />
