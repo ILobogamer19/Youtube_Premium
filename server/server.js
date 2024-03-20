@@ -66,4 +66,11 @@ app.post(
   }
 );
 
+app.get(
+  "https://ornelassignature-server.vercel.app/registro",
+  (Requisicao, Resposta) => {
+    Resposta.send("Registro Servidor");
+  }
+);
+
 app.listen(5000, () => console.log("Servidor na porta 5000"));
