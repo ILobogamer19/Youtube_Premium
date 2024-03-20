@@ -15,8 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (Requisicao, Resposta) => {
-  console.log("Correto");
-  return;
+  Resposta.send(<p>Testado</p>);
 });
 
 app.post(
