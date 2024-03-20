@@ -17,6 +17,10 @@ app.use("/", (Requisicao, Resposta) => {
   Resposta.send("Servidor rodando");
 });
 
+app.use("/registro", (Requisicao, Resposta) => {
+  Resposta.send("Registro");
+});
+
 app.post("/registro", (Requisicao, Resposta) => {
   const { Nome } = Requisicao.body;
   const { Numero } = Requisicao.body;
@@ -61,8 +65,6 @@ app.post("/registro", (Requisicao, Resposta) => {
       );
     }
   }, 500);
-
-  Resposta.send("Registro");
 });
 
 app.listen(5000, () => console.log("Servidor na porta 5000"));
