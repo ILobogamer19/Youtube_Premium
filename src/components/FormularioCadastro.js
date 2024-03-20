@@ -68,10 +68,15 @@ export default function FormularioMercadoPago() {
       Numero: Valores.Numero,
       Email: Valores.Email,
       Indicacao: Valores.Indicacao,
-    }).then((resposta) => {
-      console.log("Resultado do envio:");
-      console.log(resposta);
-    });
+    })
+      .then((resposta) => {
+        console.log("Resultado do envio:");
+        console.log(resposta);
+      })
+      .catch((erro) => {
+        console.log("Erro: ");
+        console.log(erro);
+      });
     console.log("Dados enviados");
   }
 

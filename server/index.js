@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express("");
 const mysql = require("mysql");
-// const cors = require("cors");
+const cors = require("cors");
 
 const Banco_De_Dados = mysql.createPool({
   host: "localhost",
@@ -11,7 +11,7 @@ const Banco_De_Dados = mysql.createPool({
   insecureAuth: true,
 });
 
-// app.use(cors());
+app.use(cors());
 app.use(express.json());
 
 app.post("/registro", (Requisicao, Resposta) => {
