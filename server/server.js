@@ -68,6 +68,8 @@ app.post("/registro", (Requisicao, Resposta) => {
       );
     }
   }, 500);
+
+  Resposta.send(console.log("Executado o servidor"));
 });
 
 app.get("/registro", (Requisicao, Resposta) => {
