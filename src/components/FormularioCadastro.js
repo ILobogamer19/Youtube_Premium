@@ -60,14 +60,19 @@ export default function FormularioMercadoPago() {
       Valores.Indicacao = "";
     }
 
+    console.log("Enviando Dados para Axios");
+    console.log(Valores.Nome);
+
     Axios.post("http://localhost:3001/registro", {
       Nome: Valores.Nome,
       Numero: Valores.Numero,
       Email: Valores.Email,
       Indicacao: Valores.Indicacao,
     }).then((resposta) => {
+      console.log("Resultado do envio:");
       console.log(resposta);
     });
+    console.log("Dados enviados");
   }
 
   return (
