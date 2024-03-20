@@ -39,33 +39,35 @@ app.post("/registro", (Requisicao, Resposta) => {
     return (Emails_Registrados = Resultado);
   });
 
-  // setTimeout(() => {
-  console.log("Inicio de repetição de objeto");
-  Emails_Registrados.forEach((Objeto) => {
-    console.log("Verificação de email repetido");
-    if (Email == Objeto.email) {
-      Teste_Duplicidade = false;
-      console.log("Email repetido encontrado");
+  setTimeout(() => {
+    if (Emails_Registrados) {
+      console.log("Inicio de repetição de objeto");
+      Emails_Registrados.forEach((Objeto) => {
+        console.log("Verificação de email repetido");
+        if (Email == Objeto.email) {
+          Teste_Duplicidade = false;
+          console.log("Email repetido encontrado");
+        }
+      });
     }
-  });
 
-  let Sintaxe_SQL_Insercao =
-    "INSERT INTO assinantes ( nome, numero, email, indicacao) VALUES (?, ?, ?, ?)";
+    let Sintaxe_SQL_Insercao =
+      "INSERT INTO assinantes ( nome, numero, email, indicacao) VALUES (?, ?, ?, ?)";
 
-  let Valores_Para_Insercao = [Nome, Numero, Email, Indicacao];
+    let Valores_Para_Insercao = [Nome, Numero, Email, Indicacao];
 
-  if (Teste_Duplicidade === true) {
-    console.log("Inserção de assinante");
-    Banco_De_Dados.query(
-      Sintaxe_SQL_Insercao,
-      Valores_Para_Insercao,
-      (erro, resultado) => {
-        console.log(erro);
-        console.log(resultado);
-      }
-    );
-  }
-  // }, 500);
+    if (Teste_Duplicidade === true) {
+      console.log("Inserção de assinante");
+      Banco_De_Dados.query(
+        Sintaxe_SQL_Insercao,
+        Valores_Para_Insercao,
+        (erro, resultado) => {
+          console.log(erro);
+          console.log(resultado);
+        }
+      );
+    }
+  }, 500);
 });
 
 app.get("/registro", (Requisicao, Resposta) => {
