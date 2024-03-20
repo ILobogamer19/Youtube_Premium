@@ -17,10 +17,6 @@ app.get("/", (Requisicao, Resposta) => {
   Resposta.send("Servidor rodando");
 });
 
-app.get("/registro", (Requisicao, Resposta) => {
-  Resposta.send("Registro");
-});
-
 app.post("/registro", (Requisicao, Resposta) => {
   const { Nome } = Requisicao.body;
   const { Numero } = Requisicao.body;
