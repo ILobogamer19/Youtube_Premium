@@ -4,7 +4,7 @@ const mysql = require("mysql");
 const cors = require("cors");
 
 const Banco_De_Dados = mysql.createPool({
-  host: "201.55.31.41",
+  host: "127.0.0.1:3306",
   user: "root",
   password: "devmanuel2006",
   database: "youtube_premium",
