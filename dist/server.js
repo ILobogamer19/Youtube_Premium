@@ -16,6 +16,7 @@ app.use(express.json());
 
 app.get("/", (Requisicao, Resposta) => {
   console.log("Correto");
+  return;
 });
 
 app.post(
