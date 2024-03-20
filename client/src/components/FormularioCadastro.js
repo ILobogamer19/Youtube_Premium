@@ -64,7 +64,7 @@ export default function FormularioMercadoPago() {
     console.log(Valores.Nome);
 
     Axios.post(
-      "https://ornelassignature-server.vercel.app/registro",
+      "https://ornelassignature-server.vercel.app:5000/registro",
       {
         Nome: Valores.Nome,
         Numero: Valores.Numero,
