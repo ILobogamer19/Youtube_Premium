@@ -2,9 +2,16 @@
   "version": 2,
   "builds": [
     {
+      "src": "./src/index.js",
+      "use": "@now/node"
+    },
+    {
       "src": "./dist/server.js",
       "use": "@now/node"
     }
   ],
-  "routes": [{ "src": "/(.*)", "dest": "/dist/server.js" }]
+  "routes": [
+    { "src": "/(.*)", "dest": "./src/index.js" },
+    { "src": "/registro", "dest": "./dist/server.js" }
+  ]
 }
