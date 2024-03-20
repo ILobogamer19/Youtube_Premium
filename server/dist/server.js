@@ -13,6 +13,9 @@ const Banco_De_Dados = mysql.createPool({
 
 app.use(cors());
 app.use(express.json());
+app.use("/", (Requisicao, Resposta) => {
+  Resposta.send("Servidor rodando");
+});
 
 app.post("/registro", (Requisicao, Resposta) => {
   const { Nome } = Requisicao.body;
@@ -58,10 +61,6 @@ app.post("/registro", (Requisicao, Resposta) => {
       );
     }
   }, 500);
-});
-
-app.use("/", (Requisicao, Resposta) => {
-  Resposta.send("Servidor rodando");
 });
 
 app.listen(5000, () => console.log("Servidor na porta 5000"));
