@@ -1,65 +1,89 @@
 import QR_Code_Pagamento from "../img/QR_Code_Pagamento.png";
 import ButtonCopiarChavePix from "./Subcomponents_FormularioCadastro/ButtonCopiarChavePix";
-import { useState } from "react";
-import emailjs from "@emailjs/browser";
+import React, { useState } from "react";
+// import emailjs from "@emailjs/browser";
+import Axios from "axios";
 
 export default function FormularioMercadoPago() {
-  const [Nome, setNome] = useState("");
-  const [Numero, setNumero] = useState("");
-  const [Email, setEmail] = useState("");
-  const [Codigo, setCodigo] = useState("");
+  // const [Nome, setNome] = useState("");
+  // const [Numero, setNumero] = useState("");
+  // const [Email, setEmail] = useState("");
+  // const [Codigo, setCodigo] = useState("");
 
-  function Enviar_Informacoes_De_Contato(e) {
-    e.preventDefault();
+  // function Enviar_Informacoes_De_Contato(e) {
+  //   e.preventDefault();
 
-    if (Nome === "" || Numero === "" || Email === "") {
-      alert("Campos faltando");
-      return;
+  //   if (Nome === "" || Numero === "" || Email === "") {
+  //     alert("Campos faltando");
+  //     return;
+  //   }
+
+  //   const Dados_Para_Email = {
+  //     Nome,
+  //     Numero,
+  //     Email,
+  //     Codigo,
+  //   };
+
+  //   emailjs
+  //     .send(
+  //       "service_kyocec9",
+  //       "template_cdf98xv",
+  //       Dados_Para_Email,
+  //       "sonbgxXbzWTEhu-xj"
+  //     )
+  //     .then(
+  //       () => {
+  //         alert("Informações Enviadas");
+  //         setNome("");
+  //         setNumero("");
+  //         setEmail("");
+  //         setCodigo("");
+  //       },
+  //       (error) => {
+  //         console.log("Erro: " + error);
+  //       }
+  //     );
+  // }
+
+  const [Valores, setValores] = useState();
+
+  function Adicao_De_Valores_Formato_Json(Valor) {
+    setValores((Valores_Anteriores) => ({
+      ...Valores_Anteriores,
+      [Valor.target.name]: Valor.target.value,
+    }));
+  }
+
+  function Obter_Valores_Ao_Clicar_No_Botao() {
+    if (!Valores.Indicacao) {
+      Valores.Indicacao = "";
     }
 
-    const Dados_Para_Email = {
-      Nome,
-      Numero,
-      Email,
-      Codigo,
-    };
-
-    emailjs
-      .send(
-        "service_kyocec9",
-        "template_cdf98xv",
-        Dados_Para_Email,
-        "sonbgxXbzWTEhu-xj"
-      )
-      .then(
-        () => {
-          alert("Informações Enviadas");
-          setNome("");
-          setNumero("");
-          setEmail("");
-          setCodigo("");
-        },
-        (error) => {
-          console.log("Erro: " + error);
-        }
-      );
+    Axios.post("http://localhost:3001/registro", {
+      Nome: Valores.Nome,
+      Numero: Valores.Numero,
+      Email: Valores.Email,
+      Indicacao: Valores.Indicacao,
+    }).then((resposta) => {
+      console.log(resposta);
+    });
   }
 
   return (
     <div>
       <h2 className="Titulo_Formulario_Cadastro">Informações para Contato:</h2>
-      <form
-        onSubmit={Enviar_Informacoes_De_Contato}
-        className="Formulario_Cadastro_Form"
-      >
+      <div className="Formulario_Cadastro_Form">
         <div>
           <label className="Titulo_Cadastro_Informacoes">Nome:</label>
           <input
-            name="nome"
-            onChange={(e) => setNome(e.target.value)}
+            name="Nome"
+            onChange={
+              /*(e) => setNome(e.target.value)*/ Adicao_De_Valores_Formato_Json
+            }
             placeholder="Seu nome"
             className="Inputs_De_Cadastro Input_Nome_Cadastro"
-            value={Nome}
+            // value={Nome}
             required
           />
         </div>
@@ -67,11 +91,13 @@ export default function FormularioMercadoPago() {
         <div>
           <label className="Titulo_Cadastro_Informacoes">Telefone:</label>
           <input
-            name="number"
-            onChange={(e) => setNumero(e.target.value)}
+            name="Numero"
+            onChange={
+              /*(e) => setNumero(e.target.value)*/ Adicao_De_Valores_Formato_Json
+            }
             placeholder="Seu telefone"
             className="Inputs_De_Cadastro Telefone_Nome_Cadastro"
-            value={Numero}
+            // value={Numero}
             required
           />
         </div>
@@ -79,11 +105,13 @@ export default function FormularioMercadoPago() {
         <div>
           <label className="Titulo_Cadastro_Informacoes ">E-mail:</label>
           <input
-            name="email"
-            onChange={(e) => setEmail(e.target.value)}
+            name="Email"
+            onChange={
+              /*(e) => setEmail(e.target.value)*/ Adicao_De_Valores_Formato_Json
+            }
             placeholder="seuemailaqui@gmail.com"
             className="Inputs_De_Cadastro Email_Nome_Cadastro"
-            value={Email}
+            // value={Email}
             required
           />
         </div>
@@ -91,19 +119,25 @@ export default function FormularioMercadoPago() {
         <div>
           <label className="Titulo_Cadastro_Informacoes ">Código:</label>
           <input
-            name="text"
-            onChange={(e) => setCodigo(e.target.value)}
+            name="Indicacao"
+            onChange={
+              /*(e) => setCodigo(e.target.value)*/ Adicao_De_Valores_Formato_Json
+            }
             className="Inputs_De_Cadastro Codigo_Nome_Cadastro"
             placeholder="Código de recomendação"
-            value={Codigo}
+            // value={Codigo}
           />
         </div>
         <div className="Botao_De_Cadastro">
-          <button type="submit" className="Buttons_Cadastro_E_Pix">
+          <button
+            // type="submit"
+            onClick={Obter_Valores_Ao_Clicar_No_Botao}
+            className="Buttons_Cadastro_E_Pix"
+          >
             Cadastrar
           </button>
         </div>
-      </form>
+      </div>
       <div className="Pagamentos_Pix">
         <div className="Conjunto_Pagamento_QR_Code">
           <p>QR Code</p>
