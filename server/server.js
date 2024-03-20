@@ -61,6 +61,8 @@ app.post("/registro", (Requisicao, Resposta) => {
       );
     }
   }, 500);
+
+  Resposta.send("Registro");
 });
 
 app.listen(5000, () => console.log("Servidor na porta 5000"));
