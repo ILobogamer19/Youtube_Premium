@@ -13,7 +13,8 @@ const Banco_De_Dados = mysql.createPool({
 
 app.use(
   cors({
-    origin: ["https://ornelassignature.vercel.app"],
+    origin: "https://ornelassignature.vercel.app",
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 app.use(express.json());
