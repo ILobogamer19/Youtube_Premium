@@ -11,7 +11,11 @@ const Banco_De_Dados = mysql.createPool({
   insecureAuth: true,
 });
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://ornelassignature.vercel.app"],
+  })
+);
 app.use(express.json());
 app.get("/", (Requisicao, Resposta) => {
   Resposta.send("Servidor rodando");
