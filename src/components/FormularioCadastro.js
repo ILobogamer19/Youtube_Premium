@@ -63,12 +63,20 @@ export default function FormularioMercadoPago() {
     console.log("Enviando Dados para Axios");
     console.log(Valores.Nome);
 
-    Axios.post("https://ornelassignature.vercel.app/registro", {
-      Nome: Valores.Nome,
-      Numero: Valores.Numero,
-      Email: Valores.Email,
-      Indicacao: Valores.Indicacao,
-    })
+    Axios.post(
+      "https://ornelassignature.vercel.app/registro",
+      {
+        Nome: Valores.Nome,
+        Numero: Valores.Numero,
+        Email: Valores.Email,
+        Indicacao: Valores.Indicacao,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
       .then((resposta) => {
         console.log("Resultado do envio:");
         console.log(resposta);
