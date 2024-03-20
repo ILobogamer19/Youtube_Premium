@@ -13,11 +13,11 @@ const Banco_De_Dados = mysql.createPool({
 
 app.use(cors());
 app.use(express.json());
-app.use("/", (Requisicao, Resposta) => {
+app.get("/", (Requisicao, Resposta) => {
   Resposta.send("Servidor rodando");
 });
 
-app.use("/registro", (Requisicao, Resposta) => {
+app.get("/registro", (Requisicao, Resposta) => {
   Resposta.send("Registro");
 });
 
