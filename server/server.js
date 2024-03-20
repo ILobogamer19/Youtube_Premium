@@ -4,7 +4,7 @@ const mysql = require("mysql");
 const cors = require("cors");
 
 const Banco_De_Dados = mysql.createPool({
-  host: "127.0.0.1:3306",
+  host: "127.0.0.1",
   user: "root",
   password: "devmanuel2006",
   database: "youtube_premium",
@@ -13,10 +13,12 @@ const Banco_De_Dados = mysql.createPool({
 
 app.use(
   cors({
-    origin: "https://ornelassignature.vercel.app",
+    origin: ["https://ornelassignature.vercel.app"],
+    optionsSuccessStatus: 200,
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
 app.use(express.json());
 app.get("/", (Requisicao, Resposta) => {
   Resposta.send("Servidor rodando");
