@@ -4,7 +4,7 @@ const mysql = require("mysql");
 const cors = require("cors");
 
 const Banco_De_Dados = mysql.createPool({
-  host: "localhost",
+  host: "201.55.31.41",
   user: "root",
   password: "devmanuel2006",
   database: "youtube_premium",
@@ -40,16 +40,14 @@ app.post("/registro", (Requisicao, Resposta) => {
   });
 
   setTimeout(() => {
-    if (Emails_Registrados) {
-      console.log("Inicio de repetição de objeto");
-      Emails_Registrados.forEach((Objeto) => {
-        console.log("Verificação de email repetido");
-        if (Email == Objeto.email) {
-          Teste_Duplicidade = false;
-          console.log("Email repetido encontrado");
-        }
-      });
-    }
+    console.log("Inicio de repetição de objeto");
+    Emails_Registrados.forEach((Objeto) => {
+      console.log("Verificação de email repetido");
+      if (Email == Objeto.email) {
+        Teste_Duplicidade = false;
+        console.log("Email repetido encontrado");
+      }
+    });
 
     let Sintaxe_SQL_Insercao =
       "INSERT INTO assinantes ( nome, numero, email, indicacao) VALUES (?, ?, ?, ?)";
