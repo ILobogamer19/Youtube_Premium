@@ -14,6 +14,11 @@ const Banco_De_Dados = mysql.createPool({
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (Requisicao, Resposta) => {
+  console.log("Correto");
+  return <p>Teste</p>;
+});
+
 app.post(
   "https://ornelassignature.vercel.app/registro",
   (Requisicao, Resposta) => {
