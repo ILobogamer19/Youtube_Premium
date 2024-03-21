@@ -29,10 +29,13 @@ app.post("/registro", (Requisicao, Resposta) => {
   const Status_Assinatura = true;
   const Status_Pagamento = true;
   const Data_Assinatura = new Date();
-  const Data_Vencimento = Data_Assinatura.setMonth(
-    Data_Assinatura.getMonth() + 1
-  );
+  const Data_Vencimento = new Date(Data_Assinatura);
   const Grupo_Assinantes = 1;
+
+  Data_Vencimento.setMonth(Data_Vencimento.getMonth() + 1);
+
+  const Data_Assinatura_Formatada = Data_Assinatura.toISOString().split("T")[0];
+  const Data_Vencimento_Formatada = Data_Vencimento.toISOString().split("T")[0];
 
   console.log("Nome: " + Nome);
   console.log("Numero: " + Numero);
@@ -40,8 +43,8 @@ app.post("/registro", (Requisicao, Resposta) => {
   console.log("Indicacao: " + Indicacao);
   console.log("Status_Assinatura: " + Status_Assinatura);
   console.log("Status_Pagamento: " + Status_Pagamento);
-  console.log("Data_Assinatura: " + Data_Assinatura);
-  console.log("Data_Vencimento: " + Data_Vencimento);
+  console.log("Data_Assinatura: " + Data_Assinatura_Formatada);
+  console.log("Data_Vencimento: " + Data_Vencimento_Formatada);
   console.log("Grupo_Assinantes: " + Grupo_Assinantes);
 
   let Sintaxe_SQL_Pesquisa_Usuarios = "SELECT email FROM assinantes";
@@ -73,8 +76,8 @@ app.post("/registro", (Requisicao, Resposta) => {
       Indicacao,
       Status_Assinatura,
       Status_Pagamento,
-      Data_Assinatura,
-      Data_Assinatura,
+      Data_Assinatura_Formatada,
+      Data_Vencimento_Formatada,
       Grupo_Assinantes,
     ];
 
