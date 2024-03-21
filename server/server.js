@@ -99,10 +99,10 @@ app.post("/registro", (Requisicao, Resposta) => {
           console.log("Query executada");
           console.log(erro);
           console.log(resultado);
-          Resposta.send("Envio de solicitações executado");
         }
       );
     }
+    Resposta.send("Envio de solicitações executado");
   }, 500);
 });
 
