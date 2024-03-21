@@ -8,7 +8,6 @@ const Banco_De_Dados = mysql.createPool({
   user: "admin",
   password: "adiminadmin",
   database: "youtube_premium",
-  insecureAuth: true,
   connectionTimeout: 30000,
   authSwitchHandler: (data, cb) => {
     if (data.pluginName === "mysql_clear_password") {
