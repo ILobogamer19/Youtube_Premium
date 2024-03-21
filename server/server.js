@@ -34,8 +34,11 @@ app.post("/registro", (Requisicao, Resposta) => {
 
   Data_Vencimento.setMonth(Data_Vencimento.getMonth() + 1);
 
-  const Data_Assinatura_Formatada = Data_Assinatura.toISOString().split("T")[0];
-  const Data_Vencimento_Formatada = Data_Vencimento.toISOString().split("T")[0];
+  // const Data_Assinatura_Formatada = Data_Assinatura.toISOString().split("T")[0];
+  // const Data_Vencimento_Formatada = Data_Vencimento.toISOString().split("T")[0];
+
+  const Data_Assinatura_Formatada = "2024-03-04";
+  const Data_Vencimento_Formatada = "2024-04-04";
 
   console.log("Nome: " + Nome);
   console.log("Numero: " + Numero);
@@ -85,17 +88,17 @@ app.post("/registro", (Requisicao, Resposta) => {
       "Valores que vão para o banco de dados: " + Valores_Para_Insercao
     );
 
-    // if (Teste_Duplicidade === true) {
-    //   console.log("Inserção de assinante");
-    //   Banco_De_Dados.query(
-    //     Sintaxe_SQL_Insercao,
-    //     Valores_Para_Insercao,
-    //     (erro, resultado) => {
-    //       console.log(erro);
-    //       console.log(resultado);
-    //     }
-    //   );
-    // }
+    if (Teste_Duplicidade === true) {
+      console.log("Inserção de assinante");
+      Banco_De_Dados.query(
+        Sintaxe_SQL_Insercao,
+        Valores_Para_Insercao,
+        (erro, resultado) => {
+          console.log(erro);
+          console.log(resultado);
+        }
+      );
+    }
   }, 500);
 
   Resposta.send(console.log("Executado o servidor"));
