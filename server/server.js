@@ -10,6 +10,12 @@ const Banco_De_Dados = mysql.createPool({
   database: "youtube_premium",
   insecureAuth: true,
   connectionTimeout: 30000,
+  authSwitchHandler: (data, cb) => {
+    if (data.pluginName === "mysql_clear_password") {
+      const password = "adiminadmin";
+      cb(null, Buffer.from(password + "\0"));
+    }
+  },
 });
 
 app.use(
