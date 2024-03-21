@@ -7,7 +7,7 @@ const Banco_De_Dados = mysql.createPool({
   host: "youtube.c7cca24a6tib.us-east-2.rds.amazonaws.com",
   port: 3300,
   user: "admin",
-  password: "adiminadmin",
+  password: "adimin_admin",
   database: "youtube_premium",
 });
 
