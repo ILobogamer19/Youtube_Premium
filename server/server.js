@@ -99,6 +99,9 @@ app.post("/registro", (Requisicao, Resposta) => {
         }
       );
     }
+    setTimeout(() => {
+      Resposta.send("Envio de solicitações executado");
+    }, 2000);
   }, 500);
 });
 
