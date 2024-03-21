@@ -20,6 +20,20 @@ app.use(
 );
 
 app.use(express.json());
+
+app.get("/teste-conexao", (req, res) => {
+  Banco_De_Dados.getConnection((err, connection) => {
+    if (err) {
+      console.error("Erro ao conectar ao banco de dados:", err);
+      res.status(500).send("Erro ao conectar ao banco de dados");
+    } else {
+      console.log("Conexão bem-sucedida ao banco de dados");
+      connection.release();
+      res.status(200).send("Conexão bem-sucedida ao banco de dados");
+    }
+  });
+});
+
 app.get("/", (Requisicao, Resposta) => {
   Resposta.send("Servidor rodando");
 });
