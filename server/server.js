@@ -50,9 +50,9 @@ app.post("/registro", (Requisicao, Resposta) => {
   console.log("Data_Vencimento: " + Data_Vencimento_Formatada);
   console.log("Grupo_Assinantes: " + Grupo_Assinantes);
 
-  let Sintaxe_SQL_Pesquisa_Usuarios = "SELECT email FROM assinantes";
-  let Emails_Registrados;
-  let Teste_Duplicidade = true;
+  var Sintaxe_SQL_Pesquisa_Usuarios = "SELECT email FROM assinantes";
+  var Emails_Registrados;
+  var Teste_Duplicidade = true;
 
   Banco_De_Dados.query(Sintaxe_SQL_Pesquisa_Usuarios, (erro, Resultado) => {
     console.log("Executado");
@@ -69,10 +69,10 @@ app.post("/registro", (Requisicao, Resposta) => {
       }
     });
 
-    let Sintaxe_SQL_Insercao =
+    var Sintaxe_SQL_Insercao =
       "INSERT INTO assinantes ( nome, telefone, email, indicacao, status_assinatura, status_pagamento, data_assinatura, data_vencimento, grupo_assinantes) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-    let Valores_Para_Insercao = [
+    var Valores_Para_Insercao = [
       Nome,
       Numero,
       Email,
@@ -100,12 +100,6 @@ app.post("/registro", (Requisicao, Resposta) => {
       );
     }
   }, 500);
-
-  Resposta.send(console.log("Executado o servidor"));
-});
-
-app.get("/registro", (Requisicao, Resposta) => {
-  Resposta.send("Registro Servidor");
 });
 
 app.listen(5000, () => console.log("Servidor na porta 5000"));
