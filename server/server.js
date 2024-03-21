@@ -60,16 +60,16 @@ app.post("/registro", (Requisicao, Resposta) => {
   // });
 
   setTimeout(() => {
-    console.log("Inicio de repetição de objeto");
-    if (Emails_Registrados) {
-      Emails_Registrados.forEach((Objeto) => {
-        console.log("Verificação de email repetido");
-        if (Email == Objeto.email) {
-          Teste_Duplicidade = false;
-          console.log("Email repetido encontrado");
-        }
-      });
-    }
+    // console.log("Inicio de repetição de objeto");
+    // if (Emails_Registrados) {
+    //   Emails_Registrados.forEach((Objeto) => {
+    //     console.log("Verificação de email repetido");
+    //     if (Email == Objeto.email) {
+    //       Teste_Duplicidade = false;
+    //       console.log("Email repetido encontrado");
+    //     }
+    //   });
+    // }
 
     var Sintaxe_SQL_Insercao =
       "INSERT INTO assinantes ( nome, telefone, email, indicacao, status_assinatura, status_pagamento, data_assinatura, data_vencimento, grupo_assinantes) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -96,14 +96,13 @@ app.post("/registro", (Requisicao, Resposta) => {
         Sintaxe_SQL_Insercao,
         Valores_Para_Insercao,
         (erro, resultado) => {
+          console.log("Query executada");
           console.log(erro);
           console.log(resultado);
+          Resposta.send("Envio de solicitações executado");
         }
       );
     }
-    setTimeout(() => {
-      Resposta.send("Envio de solicitações executado");
-    }, 2000);
   }, 500);
 });
 
