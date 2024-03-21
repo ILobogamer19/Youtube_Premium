@@ -9,6 +9,7 @@ const Banco_De_Dados = mysql.createPool({
   password: "adiminadmin",
   database: "youtube_premium",
   insecureAuth: true,
+  connectionTimeout: 30000,
 });
 
 app.use(
