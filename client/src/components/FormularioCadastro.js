@@ -45,7 +45,6 @@ export default function FormularioMercadoPago() {
   }
 
   function Obter_Valores_Ao_Clicar_No_Botao() {
-    Enviar_Informacoes_De_Contato();
     if (!Valores.Indicacao) {
       Valores.Indicacao = "";
     }
@@ -76,6 +75,16 @@ export default function FormularioMercadoPago() {
         console.log(erro);
       });
     console.log("Dados enviados");
+    fetch("https://ornelassignature-server.vercel.app/registro")
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          Enviar_Informacoes_De_Contato();
+        }
+      })
+      .catch((error) => {
+        console.error("Erro:", error);
+      });
   }
 
   return (
