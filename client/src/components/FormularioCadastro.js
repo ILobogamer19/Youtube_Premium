@@ -1,39 +1,39 @@
 import QR_Code_Pagamento from "../img/QR_Code_Pagamento.png";
 import ButtonCopiarChavePix from "./Subcomponents_FormularioCadastro/ButtonCopiarChavePix";
 import React, { useState } from "react";
-// import emailjs from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 import Axios from "axios";
 
 export default function FormularioMercadoPago() {
-  // function Enviar_Informacoes_De_Contato() {
-  //   if (Valores.Nome === "" || Valores.Numero === "" || Valores.Email === "") {
-  //     alert("Campos faltando");
-  //     return;
-  //   }
+  function Enviar_Informacoes_De_Contato() {
+    if (Valores.Nome === "" || Valores.Numero === "" || Valores.Email === "") {
+      alert("Campos faltando");
+      return;
+    }
 
-  //   const Dados_Para_Email = {
-  //     Nome: Valores.Nome,
-  //     Numero: Valores.Numero,
-  //     Email: Valores.Email,
-  //     Indicacao: Valores.Indicacao,
-  //   };
+    const Dados_Para_Email = {
+      Nome: Valores.Nome,
+      Numero: Valores.Numero,
+      Email: Valores.Email,
+      Indicacao: Valores.Indicacao,
+    };
 
-  //   emailjs
-  //     .send(
-  //       "service_kyocec9",
-  //       "template_cdf98xv",
-  //       Dados_Para_Email,
-  //       "sonbgxXbzWTEhu-xj"
-  //     )
-  //     .then(
-  //       () => {
-  //         alert("Informações Enviadas");
-  //       },
-  //       (error) => {
-  //         console.log("Erro: " + error);
-  //       }
-  //     );
-  // }
+    emailjs
+      .send(
+        "service_kyocec9",
+        "template_cdf98xv",
+        Dados_Para_Email,
+        "sonbgxXbzWTEhu-xj"
+      )
+      .then(
+        () => {
+          alert("Informações Enviadas");
+        },
+        (error) => {
+          console.log("Erro: " + error);
+        }
+      );
+  }
 
   const [Valores, setValores] = useState();
 
@@ -45,6 +45,7 @@ export default function FormularioMercadoPago() {
   }
 
   function Obter_Valores_Ao_Clicar_No_Botao() {
+    Enviar_Informacoes_De_Contato();
     if (!Valores.Indicacao) {
       Valores.Indicacao = "";
     }
