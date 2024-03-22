@@ -125,10 +125,7 @@ export default function FormularioMercadoPago() {
         </div>
         <div className="Botao_De_Cadastro">
           <button
-            onClick={() => {
-              Obter_Valores_Ao_Clicar_No_Botao; /*
-              Enviar_Informacoes_De_Contato()*/
-            }}
+            onClick={Obter_Valores_Ao_Clicar_No_Botao}
             className="Buttons_Cadastro_E_Pix"
           >
             Cadastrar
