@@ -5,9 +5,7 @@ import emailjs from "@emailjs/browser";
 import Axios from "axios";
 
 export default function FormularioMercadoPago() {
-  function Enviar_Informacoes_De_Contato(e) {
-    e.preventDefault();
-
+  function Enviar_Informacoes_De_Contato() {
     if (Valores.Nome === "" || Valores.Numero === "" || Valores.Email === "") {
       alert("Campos faltando");
       return;
@@ -129,7 +127,7 @@ export default function FormularioMercadoPago() {
           <button
             onClick={() => {
               Obter_Valores_Ao_Clicar_No_Botao;
-              Enviar_Informacoes_De_Contato(e);
+              Enviar_Informacoes_De_Contato();
             }}
             className="Buttons_Cadastro_E_Pix"
           >
