@@ -5,46 +5,37 @@ import React, { useState } from "react";
 import Axios from "axios";
 
 export default function FormularioMercadoPago() {
-  // const [Nome, setNome] = useState("");
-  // const [Numero, setNumero] = useState("");
-  // const [Email, setEmail] = useState("");
-  // const [Codigo, setCodigo] = useState("");
+  function Enviar_Informacoes_De_Contato(e) {
+    e.preventDefault();
 
-  // function Enviar_Informacoes_De_Contato(e) {
-  //   e.preventDefault();
+    if (Valores.Nome === "" || Valores.Numero === "" || Valores.Email === "") {
+      alert("Campos faltando");
+      return;
+    }
 
-  //   if (Nome === "" || Numero === "" || Email === "") {
-  //     alert("Campos faltando");
-  //     return;
-  //   }
+    const Dados_Para_Email = {
+      Nome: Valores.Nome,
+      Numero: Valores.Numero,
+      Email: Valores.Email,
+      Indicacao: Valores.Indicacao,
+    };
 
-  //   const Dados_Para_Email = {
-  //     Nome,
-  //     Numero,
-  //     Email,
-  //     Codigo,
-  //   };
-
-  //   emailjs
-  //     .send(
-  //       "service_kyocec9",
-  //       "template_cdf98xv",
-  //       Dados_Para_Email,
-  //       "sonbgxXbzWTEhu-xj"
-  //     )
-  //     .then(
-  //       () => {
-  //         alert("Informações Enviadas");
-  //         setNome("");
-  //         setNumero("");
-  //         setEmail("");
-  //         setCodigo("");
-  //       },
-  //       (error) => {
-  //         console.log("Erro: " + error);
-  //       }
-  //     );
-  // }
+    emailjs
+      .send(
+        "service_kyocec9",
+        "template_cdf98xv",
+        Dados_Para_Email,
+        "sonbgxXbzWTEhu-xj"
+      )
+      .then(
+        () => {
+          alert("Informações Enviadas");
+        },
+        (error) => {
+          console.log("Erro: " + error);
+        }
+      );
+  }
 
   const [Valores, setValores] = useState();
 
@@ -96,12 +87,9 @@ export default function FormularioMercadoPago() {
           <label className="Titulo_Cadastro_Informacoes">Nome:</label>
           <input
             name="Nome"
-            onChange={
-              /*(e) => setNome(e.target.value)*/ Adicao_De_Valores_Formato_Json
-            }
+            onChange={Adicao_De_Valores_Formato_Json}
             placeholder="Seu nome"
             className="Inputs_De_Cadastro Input_Nome_Cadastro"
-            // value={Nome}
             required
           />
         </div>
@@ -110,12 +98,9 @@ export default function FormularioMercadoPago() {
           <label className="Titulo_Cadastro_Informacoes">Telefone:</label>
           <input
             name="Numero"
-            onChange={
-              /*(e) => setNumero(e.target.value)*/ Adicao_De_Valores_Formato_Json
-            }
+            onChange={Adicao_De_Valores_Formato_Json}
             placeholder="Seu telefone"
             className="Inputs_De_Cadastro Telefone_Nome_Cadastro"
-            // value={Numero}
             required
           />
         </div>
@@ -124,12 +109,9 @@ export default function FormularioMercadoPago() {
           <label className="Titulo_Cadastro_Informacoes ">E-mail:</label>
           <input
             name="Email"
-            onChange={
-              /*(e) => setEmail(e.target.value)*/ Adicao_De_Valores_Formato_Json
-            }
+            onChange={Adicao_De_Valores_Formato_Json}
             placeholder="seuemailaqui@gmail.com"
             className="Inputs_De_Cadastro Email_Nome_Cadastro"
-            // value={Email}
             required
           />
         </div>
@@ -138,18 +120,17 @@ export default function FormularioMercadoPago() {
           <label className="Titulo_Cadastro_Informacoes ">Código:</label>
           <input
             name="Indicacao"
-            onChange={
-              /*(e) => setCodigo(e.target.value)*/ Adicao_De_Valores_Formato_Json
-            }
+            onChange={Adicao_De_Valores_Formato_Json}
             className="Inputs_De_Cadastro Codigo_Nome_Cadastro"
             placeholder="Código de recomendação"
-            // value={Codigo}
           />
         </div>
         <div className="Botao_De_Cadastro">
           <button
-            // type="submit"
-            onClick={Obter_Valores_Ao_Clicar_No_Botao}
+            onClick={() => {
+              Obter_Valores_Ao_Clicar_No_Botao;
+              Enviar_Informacoes_De_Contato(e);
+            }}
             className="Buttons_Cadastro_E_Pix"
           >
             Cadastrar
