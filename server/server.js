@@ -51,8 +51,8 @@ app.post("/registro", (Requisicao, Resposta) => {
   // const Data_Assinatura_Formatada = Data_Assinatura.toISOString().split("T")[0];
   // const Data_Vencimento_Formatada = Data_Vencimento.toISOString().split("T")[0];
 
-  const Data_Assinatura_Formatada = "2024-03-05";
-  const Data_Vencimento_Formatada = "2024-04-05";
+  const Data_Assinatura_Formatada = "2024-03-13";
+  const Data_Vencimento_Formatada = "2024-04-13";
 
   console.log("Nome: " + Nome);
   console.log("Numero: " + Numero);
