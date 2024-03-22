@@ -75,7 +75,7 @@ export default function FormularioMercadoPago() {
         console.log(erro);
       });
     console.log("Dados enviados");
-    fetch("https://ornelassignature-server.vercel.app/registro")
+    fetch("https://ornelassignature-server.vercel.app/registro-resposta")
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
