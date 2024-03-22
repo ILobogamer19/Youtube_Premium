@@ -110,9 +110,6 @@ app.post("/registro", (Requisicao, Resposta) => {
           console.log("Query executada");
           console.log(erro);
           console.log(resultado);
-          app.get("/registro-resposta", (Requisicao, Resposta) => {
-            Resposta.json({ success: true });
-          });
         }
       );
     }
