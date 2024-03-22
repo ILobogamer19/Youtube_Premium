@@ -40,19 +40,16 @@ app.get("/", (Requisicao, Resposta) => {
 
 app.post("/registro", (Requisicao, Resposta) => {
   const { Nome, Numero, Email, Indicacao } = Requisicao.body;
-  const Status_Assinatura = true;
-  const Status_Pagamento = true;
+  const Status_Assinatura = false;
+  const Status_Pagamento = false;
   const Data_Assinatura = new Date();
   const Data_Vencimento = new Date(Data_Assinatura);
-  const Grupo_Assinantes = 1;
+  const Grupo_Assinantes = 4;
 
   Data_Vencimento.setMonth(Data_Vencimento.getMonth() + 1);
 
-  // const Data_Assinatura_Formatada = Data_Assinatura.toISOString().split("T")[0];
-  // const Data_Vencimento_Formatada = Data_Vencimento.toISOString().split("T")[0];
-
-  const Data_Assinatura_Formatada = "2024-03-13";
-  const Data_Vencimento_Formatada = "2024-04-13";
+  const Data_Assinatura_Formatada = Data_Assinatura.toISOString().split("T")[0];
+  const Data_Vencimento_Formatada = Data_Vencimento.toISOString().split("T")[0];
 
   console.log("Nome: " + Nome);
   console.log("Numero: " + Numero);
