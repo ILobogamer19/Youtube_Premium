@@ -1,7 +1,7 @@
 import QR_Code_Pagamento from "../img/QR_Code_Pagamento.png";
 import ButtonCopiarChavePix from "./Subcomponents_FormularioCadastro/ButtonCopiarChavePix";
 import React, { useState } from "react";
-// import emailjs from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 import Axios from "axios";
 
 export default function FormularioMercadoPago() {
